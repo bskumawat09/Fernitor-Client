@@ -12,11 +12,9 @@ const Container = styled.div`
 `
 const Announcement = () => {
     return (
-        <div>
-            <Container>
-                Super Deal! FREE Shipping on orders over $50
-            </Container>
-        </div>
+        <Container>
+            Super Deal! FREE Shipping on orders over $50
+        </Container>
     )
 }
 

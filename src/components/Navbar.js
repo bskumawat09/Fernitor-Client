@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import SearchIcon from '@mui/icons-material/Search'
+import { Badge } from '@mui/material'
+// import SearchIcon from '@mui/icons-material/Search'
+// import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
+import { Search, ShoppingCartOutlined } from '@mui/icons-material'
 
 const Container = styled.div`
     height: 60px;
@@ -41,7 +44,7 @@ const Right = styled.div`
     align-item: center;
     justify-content: flex-end;
 `;
-const MenuItems = styled.div`
+const MenuItem = styled.div`
     font-size: 14px;
     cursor: pointer;
     margin-left: 25px;
@@ -54,15 +57,20 @@ const Navbar = () => {
                 <Left>
                     <SearchContainer>
                         <Input />
-                        <SearchIcon style={{ color: "gray", fontSize: 18 }} />
+                        <Search style={{ color: "gray", fontSize: 18 }} />
                     </SearchContainer>
                 </Left>
                 <Center>
                     <Logo>FERNITOR</Logo>
                 </Center>
                 <Right>
-                    <MenuItems>REGISTER</MenuItems>
-                    <MenuItems>SIGN IN</MenuItems>
+                    <MenuItem>REGISTER</MenuItem>
+                    <MenuItem>SIGN IN</MenuItem>
+                    <MenuItem>
+                        <Badge badgeContent={4} color="primary">
+                            <ShoppingCartOutlined />
+                        </Badge>
+                    </MenuItem>
                 </Right>
             </Wrapper>
         </Container>
