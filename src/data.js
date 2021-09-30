@@ -39,3 +39,38 @@ export const categories = [
         title: "LIGHT JACKET",
     }
 ]
+
+export const popularProducts = [
+    {
+        id: 1,
+        img: "/img/sofa-white.png",
+    },
+    {
+        id: 2,
+        img: "/img/sofa-white.png",
+    },
+    {
+        id: 3,
+        img: "/img/sofa-white.png",
+    },
+    {
+        id: 4,
+        img: "/img/sofa-white.png",
+    },
+    {
+        id: 5,
+        img: "/img/sofa-white.png",
+    },
+    {
+        id: 6,
+        img: "/img/sofa-white.png",
+    },
+    {
+        id: 7,
+        img: "/img/sofa-white.png",
+    },
+    {
+        id: 8,
+        img: "/img/sofa-white.png",
+    }
+]
