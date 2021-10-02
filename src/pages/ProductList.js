@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router';
+import { useParams } from 'react-router';
 import styled from 'styled-components'
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
@@ -35,8 +35,8 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
-    const location = useLocation();
-    const category = location.pathname.split("/")[2];
+    const { category } = useParams();
+
     const [filters, setFilters] = useState({});
     const [sort, setSort] = useState("newest");
 

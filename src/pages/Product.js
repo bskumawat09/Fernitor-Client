@@ -3,7 +3,7 @@ import Announcement from '../components/Announcement'
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar'
 import { Add, Remove } from '@mui/icons-material'
-import { useLocation } from 'react-router';
+import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { publicRequest } from '../requestMethods';
 
@@ -20,7 +20,7 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     object-fit: cover;
 `;
 
@@ -111,14 +111,14 @@ const Button = styled.button`
 `;
 
 const Product = () => {
-    const location = useLocation();
-    const pid = location.pathname.split("/")[2];
+    const { pid } = useParams();
     const [product, setProduct] = useState({});
 
     useEffect(() => {
         const getProduct = async () => {
             try {
-                const response = await publicRequest.get("/products/" + pid);
+                // const response = await publicRequest.get(`/products/${pid}`);
+                const response = await publicRequest.get(`/products/${pid}`);
                 console.log(response.data);
                 setProduct(response.data.product);
             } catch (err) {
@@ -134,18 +134,12 @@ const Product = () => {
             <Announcement />
             <Wrapper>
                 <ImgContainer>
-                    <Image src="" />
+                    <Image src={product.image?.url} />
                 </ImgContainer>
                 <InfoContainer>
-                    <Title>Denim Jumpsuit</Title>
-                    <Desc>{product.description}
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                        venenatis, dolor in finibus malesuada, lectus ipsum porta nunc, at
-                        iaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, eget
-                        tristique tortor pretium ut. Curabitur elit justo, consequat id
-                        condimentum ac, volutpat ornare.
-                    </Desc>
-                    <Price>$ 20</Price>
+                    <Title>{product.name}</Title>
+                    <Desc>{product.description}</Desc>
+                    <Price>$ {product.price}</Price>
                     <FilterContainer>
                         <Filter>
                             <FilterTitle>Color</FilterTitle>
