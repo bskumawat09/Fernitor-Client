@@ -3,6 +3,9 @@ import Announcement from '../components/Announcement'
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar'
 import { Add, Remove } from '@mui/icons-material'
+import { useLocation } from 'react-router';
+import { useEffect, useState } from 'react';
+import { publicRequest } from '../requestMethods';
 
 const Container = styled.div``;
 
@@ -108,17 +111,34 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+    const location = useLocation();
+    const pid = location.pathname.split("/")[2];
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        const getProduct = async () => {
+            try {
+                const response = await publicRequest.get("/products/" + pid);
+                console.log(response.data);
+                setProduct(response.data.product);
+            } catch (err) {
+                console.log("ERROR", err);
+            }
+        }
+        getProduct();
+    }, [pid]);
+
     return (
         <Container>
             <Navbar />
             <Announcement />
             <Wrapper>
                 <ImgContainer>
-                    <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+                    <Image src="" />
                 </ImgContainer>
                 <InfoContainer>
                     <Title>Denim Jumpsuit</Title>
-                    <Desc>
+                    <Desc>{product.description}
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                         venenatis, dolor in finibus malesuada, lectus ipsum porta nunc, at
                         iaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, eget
