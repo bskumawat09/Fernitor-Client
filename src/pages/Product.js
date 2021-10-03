@@ -6,6 +6,8 @@ import { Add, Remove } from '@mui/icons-material'
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { publicRequest } from '../requestMethods';
+import { addProduct } from '../redux/cartRedux';
+import { useDispatch } from 'react-redux';
 
 const Container = styled.div``;
 
@@ -113,6 +115,8 @@ const Button = styled.button`
 const Product = () => {
     const { pid } = useParams();
     const [product, setProduct] = useState({});
+    const [quantity, setQuantity] = useState(1);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const getProduct = async () => {
@@ -127,6 +131,21 @@ const Product = () => {
         }
         getProduct();
     }, [pid]);
+
+    const handleQuantity = (type) => {
+        if (type === "decrease") {
+            quantity && setQuantity(quantity - 1);
+        } else if (type === "increase") {
+            setQuantity(quantity + 1);
+        }
+    }
+
+    // update cart
+    const handleClick = () => {
+        dispatch(
+            addProduct({ ...product, quantity })
+        );
+    }
 
     return (
         <Container>
@@ -143,9 +162,7 @@ const Product = () => {
                     <FilterContainer>
                         <Filter>
                             <FilterTitle>Color</FilterTitle>
-                            <FilterColor color="black" />
-                            <FilterColor color="darkblue" />
-                            <FilterColor color="gray" />
+                            <FilterColor color={product.color} />
                         </Filter>
                         <Filter>
                             <FilterTitle>Size</FilterTitle>
@@ -160,11 +177,11 @@ const Product = () => {
                     </FilterContainer>
                     <AddContainer>
                         <AmountContainer>
-                            <Remove />
-                            <Amount>1</Amount>
-                            <Add />
+                            <Remove onClick={() => handleQuantity("decrease")} />
+                            <Amount>{quantity}</Amount>
+                            <Add onClick={() => handleQuantity("increase")} />
                         </AmountContainer>
-                        <Button>ADD TO CART</Button>
+                        <Button onClick={handleClick}>ADD TO CART</Button>
                     </AddContainer>
                 </InfoContainer>
             </Wrapper>
