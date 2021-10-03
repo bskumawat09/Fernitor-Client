@@ -72,7 +72,7 @@ const Register = () => {
 	const handleRegister = (e) => {
 		e.preventDefault();
 		register(dispatch,
-			{ user: { name, email, password, phone, address, country } }
+			{ name, email, password, phone, address, country }
 		);
 	}
 

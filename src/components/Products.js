@@ -18,7 +18,7 @@ const Products = ({ cat }) => {
         const getProducts = async () => {
             try {
                 const response = await axios.get(cat ? `http://localhost:5000/api/products?category=${cat}` : "http://localhost:5000/api/products");
-                console.log(response.data);
+                // console.log("ProductsResponse", response.data);
                 setProducts(response.data.products);
             } catch (err) {
                 console.log("ERROR", err);

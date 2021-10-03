@@ -1,5 +1,5 @@
 import { Add, Remove } from "@mui/icons-material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -8,6 +8,8 @@ import StripeCheckout from 'react-stripe-checkout';
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+import { removeFromCart } from "../redux/apiCalls";
 
 const KEY = 'pk_test_51Jg0CWSG9kDQG5CgmyMPOzi49Uejlcp5Q6Jp61VhgFElM2R2St1bHdNRzBSBX49ItRsSkR5G6lov60C6Gn3Kt6mG00AeGVQ8hU';
 // const KEY = process.env.REACT_APP_STRIPE;
@@ -154,14 +156,16 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+	const { currentUser } = useSelector((state) => state.user);
 	const cart = useSelector(state => state.cart);
+	const dispatch = useDispatch();
 	const [stripeToken, setStripeToken] = useState(null);
 	const history = useHistory();
 
 	const onToken = (token) => {
 		setStripeToken(token);
 	}
-	console.log("stripeToken", stripeToken);
+	console.log("StripeToken", stripeToken);
 
 	useEffect(() => {
 		const makeRequest = async () => {
@@ -170,7 +174,7 @@ const Cart = () => {
 					tokenId: stripeToken.id,
 					amount: cart.total,
 				});
-				// console.log("response", response);
+				// console.log("StripeResponse", response);
 				history.push("/success", { data: response.data });
 			} catch (err) {
 				console.log("ERROR", err);
@@ -179,6 +183,10 @@ const Cart = () => {
 		stripeToken && makeRequest();
 	}, [stripeToken, cart.total, history]);
 
+	const handleRemoveFromCart = (product) => {
+		removeFromCart(dispatch, currentUser._id, product);
+	}
+
 	return (
 		<Container>
 			<Navbar />
@@ -186,7 +194,9 @@ const Cart = () => {
 			<Wrapper>
 				<Title>YOUR BAG</Title>
 				<Top>
-					<TopButton>CONTINUE SHOPPING</TopButton>
+					<Link to="/products">
+						<TopButton>CONTINUE SHOPPING</TopButton>
+					</Link>
 					<TopTexts>
 						<TopText>Shopping Bag(2)</TopText>
 						<TopText>Your Wishlist (0)</TopText>
@@ -217,6 +227,7 @@ const Cart = () => {
 										<Add />
 										<ProductAmount>{product.quantity}</ProductAmount>
 										<Remove />
+										<Button onClick={() => handleRemoveFromCart(product)}>REMOVE</Button>
 									</ProductAmountContainer>
 									<ProductPrice>Rs {product.price}</ProductPrice>
 								</PriceDetail>

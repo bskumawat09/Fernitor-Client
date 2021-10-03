@@ -3,11 +3,11 @@ import Announcement from '../components/Announcement'
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar'
 import { Add, Remove } from '@mui/icons-material'
-import { useParams } from 'react-router';
+import { Redirect, useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { publicRequest } from '../requestMethods';
-import { addProduct } from '../redux/cartRedux';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/apiCalls';
 
 const Container = styled.div``;
 
@@ -113,6 +113,7 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+    const { currentUser } = useSelector((state) => state.user);
     const { pid } = useParams();
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState(1);
@@ -121,9 +122,8 @@ const Product = () => {
     useEffect(() => {
         const getProduct = async () => {
             try {
-                // const response = await publicRequest.get(`/products/${pid}`);
                 const response = await publicRequest.get(`/products/${pid}`);
-                console.log(response.data);
+                // console.log("ProductResponse", response.data);
                 setProduct(response.data.product);
             } catch (err) {
                 console.log("ERROR", err);
@@ -140,11 +140,16 @@ const Product = () => {
         }
     }
 
-    // update cart
-    const handleClick = () => {
-        dispatch(
-            addProduct({ ...product, quantity })
-        );
+    // add to cart
+    const handleAddToCart = () => {
+        if (currentUser) {
+            addToCart(dispatch,
+                { product, quantity },
+                currentUser._id
+            )
+        } else {
+            <Redirect to="/login" />
+        }
     }
 
     return (
@@ -181,7 +186,7 @@ const Product = () => {
                             <Amount>{quantity}</Amount>
                             <Add onClick={() => handleQuantity("increase")} />
                         </AmountContainer>
-                        <Button onClick={handleClick}>ADD TO CART</Button>
+                        <Button onClick={handleAddToCart}>ADD TO CART</Button>
                     </AddContainer>
                 </InfoContainer>
             </Wrapper>
