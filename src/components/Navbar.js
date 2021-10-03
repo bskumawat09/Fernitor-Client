@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Badge } from '@mui/material'
 import { Search, ShoppingCartOutlined } from '@mui/icons-material'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { logout } from '../redux/apiCalls'
 
 const Container = styled.div`
     height: 60px;
@@ -51,9 +52,15 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
+    const user = useSelector((state) => state.user.currentUser);
     const cart = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
+
     const quantity = cart.count;
-    console.log("cart", cart);
+
+    const handleLogout = () => {
+        logout(dispatch);
+    }
 
     return (
         <Container>
@@ -68,8 +75,16 @@ const Navbar = () => {
                     <Logo>FERNITOR</Logo>
                 </Center>
                 <Right>
-                    <MenuItem>REGISTER</MenuItem>
-                    <MenuItem>SIGN IN</MenuItem>
+                    {user ? <MenuItem onClick={handleLogout}>LOGOUT</MenuItem> :
+                        <>
+                            <Link to="/register">
+                                <MenuItem>REGISTER</MenuItem>
+                            </Link>
+                            <Link to="/login">
+                                <MenuItem>SIGN IN</MenuItem>
+                            </Link>
+                        </>
+                    }
                     <Link to="/cart">
                         <MenuItem>
                             <Badge badgeContent={quantity} color="primary">

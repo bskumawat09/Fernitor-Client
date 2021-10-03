@@ -33,13 +33,13 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     transition: all 1s ease;
-    transform: translateX(${props => props.slideIndex * -100}vw);
+    transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 const Slide = styled.div`
     width: 100vw;
     height: 100vh;
     display: flex;
-    align-itmes: center;
+    align-items: center;
     background-color: #${props => props.bg};
 `;
 const ImgContainer = styled.div`
