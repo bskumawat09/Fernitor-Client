@@ -61,4 +61,4 @@ export const removeFromCart = async (dispatch, uid, product) => {
         console.log(err.message);
     }
 }
-// TODO: Get Cart
+// TODO: Get User Cart

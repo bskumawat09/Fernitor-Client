@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import styled from 'styled-components'
 import Announcement from '../components/Announcement';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import Products from '../components/Products';
+import Footer from '../components/footer/Footer';
+import Navbar from "../components/navbar/Navbar";
+import Products from '../components/products/Products';
 
 const Container = styled.div``;
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Announcement from '../components/Announcement'
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar'
+import Footer from '../components/footer/Footer';
+import Navbar from "../components/navbar/Navbar";
 import { Add, Remove } from '@mui/icons-material'
 import { Redirect, useParams } from 'react-router';
 import { useEffect, useState } from 'react';

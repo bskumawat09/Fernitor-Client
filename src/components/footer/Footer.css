@@ -1,0 +1,11 @@
+footer .brand {
+  font-size: 1.125rem;
+  font-family: var(--lg-font);
+  letter-spacing: 2px;
+}
+footer .mLink {
+  transition: color 0.3s ease;
+}
+footer .mLink:hover {
+  color: var(--pink) !important;
+}

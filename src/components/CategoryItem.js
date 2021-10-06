@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Container = styled.div`
     flex: 1;
     margin: 3px;
-    heigh: 70vh;
+    height: 70vh;
     position: relative;
 `;
 const Image = styled.img`
@@ -39,13 +39,13 @@ const Button = styled.button`
 const CategoryItem = ({ item }) => {
     return (
         <Container>
-            <Link to={`/products/${item.cat}`}>
-                <Image src={item.img} />
-                <Info>
+            <Image src={item.img} />
+            <Info>
+                <Link to={`/products/${item.cat}`} style={{ textDecoration: 'none' }}>
                     <Title>{item.title}</Title>
-                    <Button>SHOP NOW</Button>
-                </Info>
-            </Link>
+                    <Button className="btn">SHOP NOW</Button>
+                </Link>
+            </Info>
         </Container>
     )
 }

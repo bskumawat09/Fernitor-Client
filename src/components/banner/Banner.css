@@ -1,0 +1,25 @@
+#offers {
+  background: url(../../assets/discount-banner.jpg) bottom/cover no-repeat;
+}
+#offers .row {
+  min-height: 50vh;
+}
+.offers-content span {
+  color: rgb(85, 85, 85);
+  font-size: 1.75rem;
+}
+.offers-content h2 {
+  font-size: 3.75rem;
+  color: var(--pink) !important;
+  font-family: var(--lg-font);
+}
+.offers-content .btn {
+  color: rgb(85, 85, 85) !important;
+  background-color: transparent !important;
+  border-color: rgb(85, 85, 85) !important;
+}
+.offers-content .btn:hover {
+  color: white !important;
+  background-color: var(--pink) !important;
+  border-color: var(--pink) !important;
+}

@@ -1,0 +1,50 @@
+:root {
+  --lg-font: 'Cinzel', serif;
+  --sm-font: 'Urbanist', sans-serif;
+  --pink: #e5345b;
+  --black: #212529;
+  --white: #ffffff;
+  --light-grey: rgb(210, 210, 210);
+  --grey: ;
+  /* --pink: #00a7e1; */
+}
+
+* {
+	margin: 0;
+}
+
+body {
+  font-family: var(--sm-font);
+}
+/* buttons */
+.bg-primary {
+  background-color: var(--pink) !important;
+}
+.btn-pink-outline {
+  background: var(--white);
+  color: var(--pink);
+  border: 1px solid var(--pink);
+}
+.btn-pink-outline:hover {
+  background: var(--pink);
+  color: var(--white);
+  border: 1px solid var(--pink);
+  transition: 0.2s linear;
+}
+.btn:not(.nav-btns button) {
+  background-color: #fff;
+  color: rgb(85, 85, 85);
+  padding: 0.6rem 1.75rem;
+  border-radius: 1.6em;
+  border: 1px solid rgb(85, 85, 85);
+}
+.btn:not(.nav-btns button):hover {
+  background-color: var(--pink);
+  color: var(--white);
+  border-color: var(--pink);
+}
+
+/* text color */
+.text-primary {
+  color: var(--pink) !important;
+}
