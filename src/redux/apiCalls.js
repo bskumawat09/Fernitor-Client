@@ -1,5 +1,5 @@
-import { publicRequest, userRequest } from "../requestMethods";
-import { addProduct, removeProduct } from "./cartRedux";
+import { publicRequest } from "../requestMethods";
+import { addProduct, getCart, removeProduct, resetCart } from "./cartRedux";
 import { loginStart, loginSuccess, loginFailure, logoutSuccess } from "./userRedux";
 
 export const login = async (dispatch, user) => {
@@ -8,6 +8,7 @@ export const login = async (dispatch, user) => {
         const response = await publicRequest.post("/auth/login", { user });
         // console.log("LoginRes", response.data);
         dispatch(loginSuccess(response.data.user));
+        getUserCart(dispatch, response.data.user._id);
     }
     catch (err) {
         console.log("AuthError", err.message);
@@ -20,6 +21,7 @@ export const logout = async (dispatch) => {
         await publicRequest.get("/auth/logout");
         // console.log("LogoutRes", response.data);
         dispatch(logoutSuccess());
+        dispatch(resetCart());
     }
     catch (err) {
         console.log("AuthError", err.message);
@@ -32,6 +34,7 @@ export const register = async (dispatch, user) => {
         const response = await publicRequest.post("/auth/register", { user });
         // console.log("RegisterRes", response.data);
         dispatch(loginSuccess(response.data.user));
+        dispatch(resetCart());
     }
     catch (err) {
         console.log("AuthError", err.message);
@@ -41,7 +44,7 @@ export const register = async (dispatch, user) => {
 
 export const addToCart = async (dispatch, item, uid) => {
     try {
-        await userRequest.put(`/users/${uid}/cart`, { item });
+        await publicRequest.put(`/users/${uid}/cart`, { item });
         // console.log("AddRes", response.data);
         const { product, quantity } = item;
         dispatch(addProduct({ ...product, quantity }));
@@ -53,7 +56,7 @@ export const addToCart = async (dispatch, item, uid) => {
 
 export const removeFromCart = async (dispatch, uid, product) => {
     try {
-        await userRequest.delete(`/users/${uid}/cart/${product._id}`);
+        await publicRequest.delete(`/users/${uid}/cart/${product._id}`);
         // console.log("RemoveRes", response.data);
         dispatch(removeProduct(product));
     }
@@ -61,4 +64,13 @@ export const removeFromCart = async (dispatch, uid, product) => {
         console.log(err.message);
     }
 }
-// TODO: Get User Cart
+
+export const getUserCart = async (dispatch, uid) => {
+    try {
+        const response = await publicRequest.get(`/users/${uid}/cart`);
+        console.log("CartRes", response.data);
+        dispatch(getCart(response.data.cart));
+    } catch (err) {
+        console.log(err.message);
+    }
+}

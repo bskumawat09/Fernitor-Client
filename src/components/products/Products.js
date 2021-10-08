@@ -11,8 +11,17 @@ const Products = ({ cat, featured, sort, limit }) => {
                 let response;
                 if (featured) {
                     response = await publicRequest.get("/products?isFeatured=true");
-                } else if (sort === "newest") {
-                    response = await publicRequest.get("/products?sort=new");
+                } else if (sort) {
+                    switch (sort) {
+                        case "asc":
+                            response = await publicRequest.get("/products?sort=asc");
+                            break;
+                        case "desc":
+                            response = await publicRequest.get("/products?sort=desc");
+                            break;
+                        default:
+                            response = await publicRequest.get("/products?sort=new");
+                    }
                 } else {
                     response = await publicRequest.get(cat ? `/products?category=${cat}` : "/products");
                 }

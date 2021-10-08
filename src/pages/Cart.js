@@ -6,13 +6,10 @@ import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 import StripeCheckout from 'react-stripe-checkout';
 import { useEffect, useState } from "react";
-import { userRequest } from "../requestMethods";
+import { publicRequest } from "../requestMethods";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { removeFromCart } from "../redux/apiCalls";
-
-const KEY = 'pk_test_51Jg0CWSG9kDQG5CgmyMPOzi49Uejlcp5Q6Jp61VhgFElM2R2St1bHdNRzBSBX49ItRsSkR5G6lov60C6Gn3Kt6mG00AeGVQ8hU';
-// const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -156,6 +153,10 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+	// TODO: Fix it process.env
+	const KEY = 'pk_test_51Jg0CWSG9kDQG5CgmyMPOzi49Uejlcp5Q6Jp61VhgFElM2R2St1bHdNRzBSBX49ItRsSkR5G6lov60C6Gn3Kt6mG00AeGVQ8hU';
+	// const KEY = process.env.REACT_APP_STRIPE;
+
 	const { currentUser } = useSelector((state) => state.user);
 	const cart = useSelector(state => state.cart);
 	const dispatch = useDispatch();
@@ -170,7 +171,7 @@ const Cart = () => {
 	useEffect(() => {
 		const makeRequest = async () => {
 			try {
-				const response = await userRequest.post("/checkout/payment", {
+				const response = await publicRequest.post("/checkout/payment", {
 					tokenId: stripeToken.id,
 					amount: cart.total,
 				});
@@ -184,7 +185,8 @@ const Cart = () => {
 	}, [stripeToken, cart.total, history]);
 
 	const handleRemoveFromCart = (product) => {
-		removeFromCart(dispatch, currentUser._id, product);
+		// can remove only if the user is currently logged in
+		removeFromCart(dispatch, currentUser?._id, product);
 	}
 
 	return (
