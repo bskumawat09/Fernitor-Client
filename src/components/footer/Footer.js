@@ -21,7 +21,7 @@ const Footer = () => {
                         <p className="text-white text-muted mt-3">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
                             mollitia quisquam veniam odit cupiditate, ullam aut voluptas velit
-                            dolor ipsam?
+                            dolor ipsam.
                         </p>
                     </div>
 
@@ -30,24 +30,21 @@ const Footer = () => {
                         <ul className="list-unstyled">
                             <li className="my-3">
                                 <Link to="/" style={{ textDecoration: 'none' }}>
-                                    <div
-                                        className="text-white text-decoration-none text-muted mLink">
+                                    <div className="text-white text-decoration-none text-muted mLink">
                                         Home
                                     </div>
                                 </Link>
                             </li>
                             <li className="my-3">
-                                <Link to="/products" style={{ textDecoration: 'none' }}>
-                                    <div
-                                        className="text-white text-decoration-none text-muted mLink">
+                                <Link to="/shop" style={{ textDecoration: 'none' }}>
+                                    <div className="text-white text-decoration-none text-muted mLink">
                                         Shop
                                     </div>
                                 </Link>
                             </li>
                             <li className="my-3">
                                 <Link to="/about" style={{ textDecoration: 'none' }}>
-                                    <div
-                                        className="text-white text-decoration-none text-muted mLink">
+                                    <div className="text-white text-decoration-none text-muted mLink">
                                         About Us
                                     </div>
                                 </Link>
@@ -61,7 +58,7 @@ const Footer = () => {
                             className="d-flex justify-content-start align-items-start my-2 text-muted">
                             <Room className="me-2" />
                             <span className="fw-light">
-                                Albert Street, New York, AS 756, United States of America
+                                Dindayal Upadhyay Marg, New Delhi pin-543210, India
                             </span>
                         </div>
                         <div
@@ -85,32 +82,27 @@ const Footer = () => {
                         <div>
                             <ul className="list-unstyled d-flex">
                                 <li>
-                                    <div
-                                        className="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <div className="text-white text-decoration-none text-muted fs-4 me-4">
                                         <Facebook />
                                     </div>
                                 </li>
                                 <li>
-                                    <div
-                                        className="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <div className="text-white text-decoration-none text-muted fs-4 me-4">
                                         <Twitter />
                                     </div>
                                 </li>
                                 <li>
-                                    <div
-                                        className="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <div className="text-white text-decoration-none text-muted fs-4 me-4">
                                         <Instagram />
                                     </div>
                                 </li>
                                 <li>
-                                    <div
-                                        className="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <div className="text-white text-decoration-none text-muted fs-4 me-4">
                                         <LinkedIn />
                                     </div>
                                 </li>
                                 <li>
-                                    <div
-                                        className="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <div className="text-white text-decoration-none text-muted fs-4 me-4">
                                         <YouTube />
                                     </div>
                                 </li>

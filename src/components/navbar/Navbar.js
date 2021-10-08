@@ -18,7 +18,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-white py-2 fixed-top">
+        <nav className="navbar navbar-expand-lg navbar-light bg-white py-2 sticky-top">
             <div className="container">
                 <div
                     className="navbar-brand d-flex justify-content-between align-items-center order-lg-0">
@@ -69,12 +69,12 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="nav-item px-2 py-2">
-                            <Link to="/products" style={{ textDecoration: 'none' }}>
+                            <Link to="/shop" style={{ textDecoration: 'none' }}>
                                 <div className="nav-link text-uppercase text-dark">shop</div>
                             </Link>
                         </li>
                         <li className="nav-item px-2 py-2">
-                            <Link to="/" style={{ textDecoration: 'none' }}>
+                            <Link to="/about" style={{ textDecoration: 'none' }}>
                                 <div className="nav-link text-uppercase text-dark">about us</div>
                             </Link>
                         </li>

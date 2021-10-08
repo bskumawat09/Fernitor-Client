@@ -34,7 +34,7 @@ const Collection = () => {
 
                     <div className="collection-list mt-4 row gx-0 gy-3">
                         {
-                            <Products />
+                            <Products limit={4} />
                         }
                     </div>
                 </div>

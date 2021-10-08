@@ -255,8 +255,8 @@ const Cart = () => {
 							<SummaryItemPrice>Rs {cart.total}</SummaryItemPrice>
 						</SummaryItem>
 						<StripeCheckout
-							name="Frenitor"
-							image="https://avatars.githubusercontent.com/u/1486366?v=4"
+							name="FERNITOR"
+							image="/img/logo.png"
 							billingAddress
 							description={`Your total is Rs ${cart.total}`}
 							amount={cart.total * 100}

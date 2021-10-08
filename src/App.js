@@ -1,10 +1,13 @@
 import './App.css'
 import Home from "./pages/Home"
-import ProductList from "./pages/ProductList"
 import Product from "./pages/Product"
 import Cart from "./pages/Cart"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import About from './pages/about/About'
+import Explore from './pages/explore/Explore'
+import Shop from './pages/shop/Shop'
+import Success from "./pages/Success"
 
 import {
 	BrowserRouter as Router,
@@ -12,7 +15,6 @@ import {
 	Route,
 	Redirect
 } from "react-router-dom";
-import Success from "./pages/Success"
 import { useSelector } from "react-redux"
 
 function App() {
@@ -22,13 +24,16 @@ function App() {
 		<Router>
 			<Switch>
 				<Route path="/products/:category">
-					<ProductList />
+					<Shop />
+				</Route>
+				<Route path="/products">
+					<Shop />
 				</Route>
 				<Route path="/product/:pid">
 					<Product />
 				</Route>
-				<Route path="/products">
-					<ProductList />
+				<Route path="/shop">
+					<Explore />
 				</Route>
 				<Route path="/cart">
 					<Cart />
@@ -41,6 +46,9 @@ function App() {
 				</Route>
 				<Route path="/register">
 					{user ? <Redirect to="/" /> : <Register />}
+				</Route>
+				<Route path="/about">
+					<About />
 				</Route>
 				<Route exact path="/">
 					<Home />

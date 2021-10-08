@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { publicRequest } from "../../requestMethods"
 import Product from '../product/Product'
 
-const Products = ({ cat, featured }) => {
+const Products = ({ cat, featured, sort, limit }) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -10,27 +10,35 @@ const Products = ({ cat, featured }) => {
             try {
                 let response;
                 if (featured) {
-                    response = await publicRequest.get(cat ? `/products?isFeatured=true&category=${cat}` : "/products?isFeatured=true");
+                    response = await publicRequest.get("/products?isFeatured=true");
+                } else if (sort === "newest") {
+                    response = await publicRequest.get("/products?sort=new");
                 } else {
                     response = await publicRequest.get(cat ? `/products?category=${cat}` : "/products");
                 }
-                // console.log("ProductsResponse", response.data);
+
+                if (limit) {
+                    response.data.results = limit;
+                    response.data.products = response.data.products.slice(0, limit);
+                }
+
+                // console.log("ProductsRes", response.data);
                 setProducts(response.data.products);
             } catch (err) {
                 console.log("ERROR", err);
             }
         }
         getProducts();
-    }, [cat, featured]);
+    }, [cat, featured, sort, limit]);
 
     return (
-        <>
+        <div class="row">
             {
                 products.map((item) => (
                     <Product item={item} key={item._id} />
                 ))
             }
-        </>
+        </div>
     )
 }
 

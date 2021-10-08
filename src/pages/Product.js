@@ -146,7 +146,8 @@ const Product = () => {
             addToCart(dispatch,
                 { product, quantity },
                 currentUser._id
-            )
+            );
+            <Redirect to="/cart" />
         } else {
             <Redirect to="/login" />
         }
