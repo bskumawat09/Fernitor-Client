@@ -1,22 +1,28 @@
 #header {
-  background: url(../../assets/banner-1.jpg) center/cover no-repeat;
-  height: 90vh;
+    background: url(../../assets/banner-1.jpg) center/cover no-repeat;
+    height: 90vh;
 }
 .carousel-inner h1 {
-  font-size: 3.75rem;
-  font-family: var(--lg-font);
-  color: #05ffc1 !important;
+    font-size: 3.75rem;
+    font-family: var(--lg-font);
+    color: #05ffc1 !important;
 }
 .carousel-inner h2 {
-  font-weight: 200;
-  letter-spacing: 0.12rem;
+    font-weight: 200;
+    letter-spacing: 0.12rem;
 }
 .carousel-item {
-  bottom: 5rem;
+    bottom: 5rem;
 }
 .carousel-item .btn {
-  border-color: var(--white) !important;
+    border-color: var(--white) !important;
 }
 .carousel-item .btn:hover {
-  border-color: var(--pink) !important;
+    border-color: var(--pink) !important;
+}
+
+@media screen and (max-width: 512px) {
+	#header {
+		height: 50vh;
+	}
 }

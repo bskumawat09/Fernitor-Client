@@ -8,30 +8,21 @@ const Products = ({ cat, featured, sort, limit }) => {
     useEffect(() => {
         const getProducts = async () => {
             try {
-                let response;
-                if (featured) {
-                    response = await publicRequest.get("/products?isFeatured=true");
-                } else if (sort) {
-                    switch (sort) {
-                        case "asc":
-                            response = await publicRequest.get("/products?sort=asc");
-                            break;
-                        case "desc":
-                            response = await publicRequest.get("/products?sort=desc");
-                            break;
-                        default:
-                            response = await publicRequest.get("/products?sort=new");
-                    }
-                } else {
-                    response = await publicRequest.get(cat ? `/products?category=${cat}` : "/products");
-                }
+                let queries = "";
+                cat && (queries += `&category=${cat}`);
+                featured && (queries += "&isFeatured=true");
+                sort && (queries += `&sort=${sort}`);
+
+                queries = queries.slice(1);
+                // console.log("Queries", queries);
+                const response = await publicRequest.get(`/products?${queries}`);
+                // console.log("ProductsRes", response.data);
 
                 if (limit) {
                     response.data.results = limit;
                     response.data.products = response.data.products.slice(0, limit);
                 }
 
-                // console.log("ProductsRes", response.data);
                 setProducts(response.data.products);
             } catch (err) {
                 console.log("ERROR", err);

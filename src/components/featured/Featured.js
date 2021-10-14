@@ -11,11 +11,6 @@ const Featured = () => {
                 <div className="title text-center">
                     <h2 className="position-relative d-inline-block">Featured Products</h2>
                 </div>
-                {/* <div className="row g-0">
-                    <div className="collection-list mt-4 row gx-0 gy-3">
-                        <Products cat={category} featured={true} />
-                    </div>
-                </div> */}
                 <Products cat={category} featured={true} />
             </div>
         </section>

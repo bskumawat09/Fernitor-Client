@@ -1,7 +1,7 @@
 import './App.css'
-import Home from "./pages/Home"
-import Product from "./pages/Product"
-import Cart from "./pages/Cart"
+import Home from "./pages/home/Home"
+import Product from "./pages/product/Product"
+// import Cart from "./pages/Cart"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import About from './pages/about/About'
@@ -16,6 +16,7 @@ import {
 	Redirect
 } from "react-router-dom";
 import { useSelector } from "react-redux"
+import Cart from './pages/cart/Cart'
 
 function App() {
 	const user = useSelector((state) => state.user.currentUser);
@@ -23,12 +24,12 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/products/:category">
+				<Route path="/shop/:category">
 					<Shop />
 				</Route>
-				<Route path="/products">
+				{/* <Route path="/products">
 					<Shop />
-				</Route>
+				</Route> */}
 				<Route path="/product/:pid">
 					<Product />
 				</Route>

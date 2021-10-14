@@ -1,7 +1,6 @@
 import { Add, Remove } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import Announcement from "../components/Announcement";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 import StripeCheckout from 'react-stripe-checkout';
@@ -192,7 +191,6 @@ const Cart = () => {
 	return (
 		<Container>
 			<Navbar />
-			<Announcement />
 			<Wrapper>
 				<Title>YOUR BAG</Title>
 				<Top>

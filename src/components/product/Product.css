@@ -1,28 +1,7 @@
-.search-btn {
-  padding: 0.44em 0.7em;
-  color: var(--white);
-  background: var(--black);
-  border: 0.08rem solid var(--black);
-  transition: 0.3s linear;
-}
-.search-btn:hover {
-  color: var(--white);
-  background: var(--pink);
-  border: 0.08rem solid var(--pink);
-  transition: 0.3s linear;
-}
-.add-to-cart-icon-btn {
-  font-size: 1rem;
-  text-decoration: none;
-  padding: 0.44rem 1rem;
-  color: var(--black);
-  background: transparent;
-  border: 0.08rem solid var(--black);
-  transition: 0.3s linear;
-}
-.add-to-cart-icon-btn:hover {
-  color: var(--white);
-  background: var(--black);
-  border: 0.08rem solid var(--black);
-  transition: 0.3s linear;
+.collection-img span {
+    top: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
 }

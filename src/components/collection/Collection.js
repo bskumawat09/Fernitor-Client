@@ -10,8 +10,7 @@ const Collection = () => {
                 </div>
 
                 <div className="row g-0">
-                    <div
-                        className="d-flex flex-wrap justify-content-center mt-5 filter-button-group">
+                    <div className="d-flex flex-wrap justify-content-center mt-5 filter-button-group">
                         <button
                             type="button"
                             className="btn m-2 text-dark active-filter-btn"

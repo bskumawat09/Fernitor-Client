@@ -4,62 +4,51 @@ import './Explore.css'
 import Navbar from "../../components/navbar/Navbar"
 import Footer from "../../components/footer/Footer"
 import { useState } from "react"
+import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material"
 
 const Explore = () => {
-    const [sort, setSort] = useState("newest");
+    const [sort, setSort] = useState("new");
+    const [category, setCategory] = useState("");
+
+    const handleChange = (event) => {
+        setCategory(event.target.value);
+    };
 
     return (
         <>
             <Navbar />
-            <div
-                class="product-banner d-flex align-items-center justify-content-center text-center">
-                <div class="text-center">
-                    <h1 class="text-capitalize text-white">our products</h1>
+            <div className="product-banner d-flex align-items-center justify-content-center text-center">
+                <div className="text-center">
+                    <h1 className="text-capitalize text-white">our products</h1>
                 </div>
             </div>
             <div className="products">
                 <div className="container-fluid">
                     <div className="row">
-                        <div
-                            className="col-10 col-md-4 col-lg-3 mx-auto text-capitalize my-3 px-5">
+                        <div className="col-10 col-md-4 col-lg-3 mx-auto text-capitalize my-3 px-5">
                             <div className="products-categories-title my-4">
-                                <h6 className="text-uppercase">shop by categories</h6>
+                                <h6 className="text-uppercase">categories</h6>
                                 <div className="products-categories-underline"></div>
                             </div>
-                            <Link to="/products" style={{ textDecoration: 'none' }}>
-                                <div className="d-block products-categories-link">
-                                    <p className="mb-0">all</p>
-                                </div>
-                            </Link>
-                            <Link to="/products/chair" style={{ textDecoration: 'none' }}>
-                                <div className="d-block products-categories-link">
-                                    <p className="mb-0">chairs</p>
-                                </div>
-                            </Link>
-                            <Link to="/products/sofa" style={{ textDecoration: 'none' }}>
-                                <div className="d-block products-categories-link">
-                                    <p className="mb-0">sofas</p>
-                                </div>
-                            </Link>
-                            <Link to="/products/bed" style={{ textDecoration: 'none' }}>
-                                <div className="d-block products-categories-link">
-                                    <p className="mb-0">beds</p>
-                                </div>
-                            </Link>
-                            <Link to="/products/desk" style={{ textDecoration: 'none' }}>
-                                <div className="d-block products-categories-link">
-                                    <p className="mb-0">desks</p>
-                                </div>
-                            </Link>
+                            <FormControl component="fieldset">
+                                <RadioGroup
+                                    aria-label="categories"
+                                    defaultValue=""
+                                    name="radio-buttons-group"
+                                    onChange={handleChange}>
+                                    <FormControlLabel value="" control={<Radio size="small" />} label="All" />
+                                    <FormControlLabel value="chair" control={<Radio size="small" />} label="Chair" />
+                                    <FormControlLabel value="bed" control={<Radio size="small" />} label="Bed" />
+                                </RadioGroup>
+                            </FormControl>
 
                             <div className="products-categories-title my-4">
-                                <h6 className="text-uppercase">shop by price</h6>
+                                <h6 className="text-uppercase">sort by</h6>
                                 <div className="products-categories-underline"></div>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="price order" className="form-label">sort by</label>
                                 <select className="form-select text-capitalize" onChange={e => setSort(e.target.value)}>
-                                    <option value="newest">newest</option>
+                                    <option value="new">newest</option>
                                     <option value="asc">low to high (price)</option>
                                     <option value="desc">high to low (price)</option>
                                 </select>
@@ -68,7 +57,7 @@ const Explore = () => {
                                 <h6 className="text-uppercase">shop by color</h6>
                                 <div className="products-categories-underline"></div>
                             </div>
-                            <Link to="/products" style={{ textDecoration: 'none' }}>
+                            <Link to="/products">
                                 <div className="color">
                                     <p className="mb-0 text-capitalize">
                                         <span className="d-inline-block products-color products-color-black mr-2">
@@ -76,7 +65,7 @@ const Explore = () => {
                                     </p>
                                 </div>
                             </Link>
-                            <Link to="/products" style={{ textDecoration: 'none' }}>
+                            <Link to="/products">
                                 <div className="color">
                                     <p className="mb-0 text-capitalize">
                                         <span className="d-inline-block products-color products-color-white mr-2">
@@ -84,7 +73,7 @@ const Explore = () => {
                                     </p>
                                 </div>
                             </Link>
-                            <Link to="/products" style={{ textDecoration: 'none' }}>
+                            <Link to="/products">
                                 <div className="color">
                                     <p className="mb-0 text-capitalize">
                                         <span className="d-inline-block products-color products-color-brown mr-2">
@@ -93,8 +82,8 @@ const Explore = () => {
                                 </div>
                             </Link>
                         </div>
-                        <div class="col-10 col-md-8 col-lg-9 my-3">
-                            <Products sort={sort} />
+                        <div className="col-10 col-md-8 col-lg-9 my-3">
+                            <Products sort={sort} cat={category} />
                         </div>
                     </div>
                 </div>

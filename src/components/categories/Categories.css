@@ -1,0 +1,35 @@
+.category-items {
+    padding-bottom: 00.8em;
+}
+.category-item {
+    position: relative;
+}
+.category-name {
+    position: absolute;
+    width: 100%;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    bottom: 3rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+.category-btn {
+    border-radius: 1.6em;
+    background-color: #fff;
+	color: rgb(85, 85, 85);
+    padding: 0.6em 1.75em;
+    border-width: 0;
+    cursor: pointer;
+}
+.category-btn:hover {
+    background-color: var(--pink);
+	color: var(--white);
+    transition: 0.2s linear;
+}
+.category-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

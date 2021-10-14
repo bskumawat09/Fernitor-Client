@@ -25,21 +25,33 @@ export const sliderItems = [
 export const categories = [
     {
         id: 1,
-        img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        title: "STYLISH CHAIR",
-        cat: "chair"
+        name: "Chair",
+        image: "https://www.ikea.com/images/sofa-and-armchairs-549294b65ee5c450507274e0cc6e8d00.jpg?f=xxs"
     },
     {
         id: 2,
-        img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        title: "LOVELY BED",
-        cat: "bed"
+        name: "Bed",
+        image: "https://www.ikea.com/in/en/images/products/hattefjaell-office-chair-gunnared-medium-grey__0852947_pe671034_s5.jpg?f=s"
     },
     {
         id: 3,
-        img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-        title: "LIGHT SOFA",
-        cat: "sofa"
+        name: "Sofa",
+        image: "https://www.ikea.com/in/en/images/products/friheten-3-seat-sofa-bed-hyllie-dark-grey__0690265_pe723191_s5.jpg?f=s"
+    },
+    {
+        id: 4,
+        name: "Table",
+        image: "https://www.ikea.com/images/d5/1c/d51c58689bf0016ad40b5410b56717f7.jpg?f=xxs"
+    },
+    {
+        id: 5,
+        name: "Storage",
+        image: "https://www.ikea.com/images/11/68/116875a89d5184b8bc9b8a779493b5ea.jpg?f=xxs"
+    },
+    {
+        id: 6,
+        name: "Lighting",
+        image: "https://www.ikea.com/images/06/e6/06e6ddf50837a91b7134bf629ebab103.jpg?f=xxs"
     }
 ]
 
