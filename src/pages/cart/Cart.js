@@ -46,7 +46,7 @@ const Cart = () => {
     return (
         <>
             <Navbar />
-            <div className="container cart-container d-flex justify-content-between">
+            <div className="container cart-container my-3 d-flex justify-content-between">
                 <div className="row w-100 mx-auto">
                     {
                         cart.products.map(product => (

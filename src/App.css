@@ -1,25 +1,25 @@
 :root {
-    --lg-font: 'Cinzel', serif;
-    --sm-font: 'Urbanist', sans-serif;
-    --pink: #e5345b;
-    --black: #212529;
-    --white: #ffffff;
-    --light-grey: rgb(210, 210, 210);
+	--lg-font: "Cinzel", serif;
+	--sm-font: "Urbanist", sans-serif;
+	--pink: #e5345b;
+	--black: #212529;
+	--white: #ffffff;
+	--light-grey: rgb(210, 210, 210);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: var(--sm-font);
+	font-family: var(--sm-font);
 }
 
 /* buttons */
 .bg-primary {
-    background-color: var(--pink) !important;
+	background-color: var(--pink) !important;
 }
 .btn-pink-outline {
 	background: var(--white);
@@ -47,7 +47,7 @@ body {
 
 /* text color */
 .text-primary {
-  	color: var(--pink) !important;
+	color: var(--pink) !important;
 }
 
 /* link */
@@ -56,10 +56,15 @@ a {
 	color: var(--black);
 }
 a :hover {
-  	color: var(--pink);
+	color: var(--pink);
 }
 
-@media (max-width: 512px) {
+@media screen and (max-width: 768px) {
+	* {
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 512px) {
 	* {
 		font-size: 12px;
 	}

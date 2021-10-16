@@ -1,0 +1,47 @@
+.modal-container {
+	display: flex;
+	max-width: 720px;
+	width: 60%;
+	height: fit-content;
+	max-height: 550px;
+	background-color: white;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+.login-form-img {
+	width: 50%;
+	object-fit: cover;
+}
+.login-form {
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.form-input {
+	flex: 1;
+}
+.form-item {
+	margin-bottom: 1em;
+}
+.alter-text {
+	font-size: 1rem;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.alter-text:hover {
+	color: var(--pink);
+}
+@media screen and (max-width: 480px) {
+	.modal-container {
+		width: 80%;
+		min-height: fit-content;
+	}
+	.login-form-img {
+		display: none;
+	}
+}
