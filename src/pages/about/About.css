@@ -1,13 +1,18 @@
 .about-banner {
-  min-height: 90vh;
-  background: url(../../assets/about-banner.jpg) center/cover no-repeat;
+	height: 90vh;
+	background: url(../../assets/about-banner.jpg) center/cover no-repeat;
 }
 .about-banner h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  font-family: var(--lg-font);
+	font-size: 3.5rem;
+	font-weight: bold;
+	font-family: var(--lg-font);
 }
 #about p {
-  font-size: 1.1rem;
-  text-align: justify;
+	font-size: 1.1rem;
+	text-align: justify;
+}
+@media screen and (max-width: 512px) {
+	.about-banner {
+		height: 50vh;
+	}
 }
