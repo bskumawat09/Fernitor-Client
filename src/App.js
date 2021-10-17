@@ -1,35 +1,21 @@
-import './App.css'
-import Home from "./pages/home/Home"
-import Product from "./pages/product/Product"
-// import Cart from "./pages/Cart"
-import Login from "./pages/Login"
-import Register from "./pages/Register"
-import About from './pages/about/About'
-import Explore from './pages/explore/Explore'
-import Shop from './pages/shop/Shop'
-import Success from "./pages/Success"
+import "./App.css";
+import Home from "./pages/home/Home";
+import Product from "./pages/product/Product";
+import Explore from "./pages/explore/Explore";
+import Shop from "./pages/shop/Shop";
+import Cart from "./pages/cart/Cart";
+import About from "./pages/about/About";
+import Success from "./pages/Success";
 
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Redirect
-} from "react-router-dom";
-import { useSelector } from "react-redux"
-import Cart from './pages/cart/Cart'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-	const user = useSelector((state) => state.user.currentUser);
-
 	return (
 		<Router>
 			<Switch>
 				<Route path="/shop/:category">
 					<Shop />
 				</Route>
-				{/* <Route path="/products">
-					<Shop />
-				</Route> */}
 				<Route path="/product/:pid">
 					<Product />
 				</Route>
@@ -41,12 +27,6 @@ function App() {
 				</Route>
 				<Route path="/success">
 					<Success />
-				</Route>
-				<Route path="/login">
-					{user ? <Redirect to="/" /> : <Login />}
-				</Route>
-				<Route path="/register">
-					{user ? <Redirect to="/" /> : <Register />}
 				</Route>
 				<Route path="/about">
 					<About />
