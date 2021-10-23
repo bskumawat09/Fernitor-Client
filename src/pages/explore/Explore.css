@@ -1,5 +1,6 @@
 .product-banner {
-	height: 90vh;
+	height: 85vh;
+	margin: 1rem auto;
 	background: url(../../assets/banner-1.jpg) center/cover no-repeat;
 }
 .product-banner h1 {

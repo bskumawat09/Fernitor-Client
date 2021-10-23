@@ -1,31 +1,31 @@
-import React, { useState } from "react"
-import "./Navbar.css"
-import { Badge } from "@mui/material"
-import { ShoppingCartOutlined } from "@mui/icons-material"
-import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom"
-import { logout } from "../../redux/apiCalls"
-import LoginModal from "../../pages/modal/Login"
-import RegisterModal from "../../pages/modal/Register"
+import React, { useState } from "react";
+import "./Navbar.css";
+import { Badge } from "@mui/material";
+import { ShoppingCartOutlined } from "@mui/icons-material";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { logout } from "../../redux/apiCalls";
+import LoginModal from "../../pages/modal/Login";
+import RegisterModal from "../../pages/modal/Register";
 
 const Navbar = () => {
-	const [openLogin, setOpenLogin] = useState(false)
-	const handleOpenLogin = () => setOpenLogin(true)
-	const handleCloseLogin = () => setOpenLogin(false)
+	const [openLogin, setOpenLogin] = useState(false);
+	const handleOpenLogin = () => setOpenLogin(true);
+	const handleCloseLogin = () => setOpenLogin(false);
 
-	const [openRegister, setOpenRegister] = useState(false)
-	const handleOpenRegister = () => setOpenRegister(true)
-	const handleCloseRegister = () => setOpenRegister(false)
+	const [openRegister, setOpenRegister] = useState(false);
+	const handleOpenRegister = () => setOpenRegister(true);
+	const handleCloseRegister = () => setOpenRegister(false);
 
-	const user = useSelector((state) => state.user.currentUser)
-	const cart = useSelector((state) => state.cart)
-	const dispatch = useDispatch()
+	const user = useSelector((state) => state.user.currentUser);
+	const cart = useSelector((state) => state.cart);
+	const dispatch = useDispatch();
 
-	const quantity = cart.count
+	const quantity = cart.count;
 
 	const handleLogout = () => {
-		logout(dispatch)
-	}
+		logout(dispatch);
+	};
 
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-white py-2 sticky-top">
@@ -57,7 +57,7 @@ const Navbar = () => {
 						</>
 					)}
 					<Link to="/cart">
-						<button type="button" className="btn position-relative">
+						<button type="button" className="btn ms-2 position-relative p-0">
 							<Badge badgeContent={quantity} color="primary">
 								<ShoppingCartOutlined />
 							</Badge>
@@ -66,7 +66,7 @@ const Navbar = () => {
 				</div>
 
 				<button
-					className="navbar-toggler border-0"
+					className="navbar-toggler border-0 p-0"
 					type="button"
 					data-bs-toggle="collapse"
 					data-bs-target="#navMenu">
@@ -101,7 +101,7 @@ const Navbar = () => {
 				handleCloseRegister={handleCloseRegister}
 			/>
 		</nav>
-	)
-}
+	);
+};
 
-export default Navbar
+export default Navbar;

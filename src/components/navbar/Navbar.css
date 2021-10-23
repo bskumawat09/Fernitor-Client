@@ -1,15 +1,14 @@
-/* navbar */
 .navbar {
-  -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.1);
 }
 .navbar-brand img {
-  width: 1.875rem;
+	width: 1.875rem;
 }
 .navbar-brand span {
-  letter-spacing: 0.125rem;
-  font-family: var(--lg-font);
+	letter-spacing: 0.125rem;
+	font-family: var(--lg-font);
 }
 .nav-link:hover {
-  color: var(--pink) !important;
+	color: var(--pink) !important;
 }

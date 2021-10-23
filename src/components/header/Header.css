@@ -1,28 +1,39 @@
-#header {
-    background: url(../../assets/banner-1.jpg) center/cover no-repeat;
-    height: 90vh;
+.carousel-container {
+	height: 85vh;
 }
-.carousel-inner h1 {
-    font-size: 3.75rem;
-    font-family: var(--lg-font);
-    color: #05ffc1 !important;
+.slider-items {
+	height: 100%;
 }
-.carousel-inner h2 {
-    font-weight: 200;
-    letter-spacing: 0.12rem;
+.slide {
+	width: 100%;
+	height: 100%;
+	position: relative;
 }
-.carousel-item {
-    bottom: 5rem;
+.slide-img {
+	object-fit: fill;
+	width: 100%;
+	height: 100%;
 }
-.carousel-item .btn {
-    border-color: var(--white) !important;
+.slide-title {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
 }
-.carousel-item .btn:hover {
-    border-color: var(--pink) !important;
+@media screen and (max-width: 768px) {
+	.carousel-container {
+		height: 60vh;
+		/* margin: 1rem; */
+	}
 }
-
-@media screen and (max-width: 512px) {
-	#header {
-		height: 50vh;
+@media screen and (max-width: 480px) {
+	.carousel-container {
+		height: 40vh;
+		margin: 0;
 	}
 }

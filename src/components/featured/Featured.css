@@ -1,3 +1,6 @@
 .text-grey {
-  color: var(--light-grey);
+	color: var(--light-grey);
+}
+#featured {
+	background-color: white;
 }

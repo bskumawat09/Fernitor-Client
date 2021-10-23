@@ -22,13 +22,13 @@ const Explore = () => {
 	return (
 		<>
 			<Navbar />
-			<div className="product-banner d-flex align-items-center justify-content-center text-center">
+			<div className="product-banner d-flex align-items-center justify-content-center text-center container">
 				<div className="text-center">
 					<h1 className="text-capitalize text-white">our products</h1>
 				</div>
 			</div>
 			<div className="products">
-				<div className="container-fluid">
+				<div className="container">
 					<div className="row">
 						<div className="col-10 col-md-4 col-lg-3 mx-auto text-capitalize my-3 px-5">
 							<div className="products-categories-title my-4">
@@ -111,7 +111,7 @@ const Explore = () => {
 								</div>
 							</Link>
 						</div>
-						<div className="col-10 col-md-8 col-lg-9 my-3">
+						<div className="col-12 col-md-8 col-lg-9 my-3 py-3 bg-white">
 							<Products sort={sort} cat={category} />
 						</div>
 					</div>
