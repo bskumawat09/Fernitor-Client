@@ -30,8 +30,8 @@ const Explore = () => {
 			<div className="products">
 				<div className="container">
 					<div className="row">
-						<div className="col-10 col-md-4 col-lg-3 mx-auto text-capitalize my-3 px-5">
-							<div className="products-categories-title my-4">
+						<div className="col-12 col-md-4 col-lg-3 mx-auto text-capitalize my-3 p-4 bg-white">
+							<div className="products-categories-title mb-4">
 								<h6 className="text-uppercase">categories</h6>
 								<div className="products-categories-underline"></div>
 							</div>

@@ -43,5 +43,6 @@
 @media screen and (max-width: 512px) {
 	.product-banner {
 		height: 50vh;
+		margin: 0 auto;
 	}
 }

@@ -12,6 +12,13 @@ const Home = () => {
 		<div>
 			<Navbar />
 			<Header />
+			<div className="container p-0 mb-4">
+				<img
+					src="/img/Clip_Diwali_Offer.jpg"
+					style={{ width: "100%" }}
+					alt=""
+				/>
+			</div>
 			<BankOffers />
 			<Categories />
 			<Banner />

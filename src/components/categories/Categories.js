@@ -4,7 +4,7 @@ import "./Categories.css";
 import { Divider } from "@mui/material";
 
 const categoryItem = (item) => (
-	<div className="category-item col-6 col-sm-4 col-lg-3 px-2 py-3">
+	<div className="category-item col-6 col-sm-4 col-lg-3">
 		<img src={item.image} alt="" className="category-img" />
 		<div className="category-name">
 			<Link to={`/shop/${item.name.toLowerCase()}`}>
@@ -22,7 +22,7 @@ const Categories = () => {
 					<h3 className="position-relative d-inline-block">Top Categories</h3>
 				</div>
 				<Divider />
-				<div className="row">
+				<div className="row g-3 py-3">
 					{categories.map((item) => categoryItem(item))}
 				</div>
 			</div>
