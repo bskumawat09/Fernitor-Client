@@ -111,7 +111,7 @@ const Explore = () => {
 								</div>
 							</Link>
 						</div>
-						<div className="col-12 col-md-8 col-lg-9 my-3 py-3 bg-white">
+						<div className="col-12 col-md-8 col-lg-9 my-md-3 py-3 bg-white">
 							<Products sort={sort} cat={category} />
 						</div>
 					</div>

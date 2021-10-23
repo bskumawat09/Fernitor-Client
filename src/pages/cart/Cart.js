@@ -48,9 +48,9 @@ const Cart = () => {
 		<>
 			<Navbar />
 			<div className="container my-4">
-				<div className="row g-3">
+				<div className="row g-3 justify-content-between">
 					<div className="col-12 col-lg-7">
-						<div className="row g-3 justify-content-between">
+						<div className="row g-3">
 							{cart.products.map((product) => (
 								<div className="col-12 position-relative">
 									<div className="d-flex bg-white p-3">
