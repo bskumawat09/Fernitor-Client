@@ -36,6 +36,10 @@
 .alter-text:hover {
 	color: var(--pink);
 }
+.modal-error {
+	color: red;
+	font-size: 0.8rem;
+}
 @media screen and (max-width: 480px) {
 	.modal-container {
 		width: 80%;

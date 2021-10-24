@@ -5,17 +5,12 @@ import { ShoppingCartOutlined } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../redux/apiCalls";
-import LoginModal from "../../pages/modal/Login";
-import RegisterModal from "../../pages/modal/Register";
+import AuthModal from "../../pages/modal/AuthModal";
 
 const Navbar = () => {
-	const [openLogin, setOpenLogin] = useState(false);
-	const handleOpenLogin = () => setOpenLogin(true);
-	const handleCloseLogin = () => setOpenLogin(false);
-
-	const [openRegister, setOpenRegister] = useState(false);
-	const handleOpenRegister = () => setOpenRegister(true);
-	const handleCloseRegister = () => setOpenRegister(false);
+	const [open, setOpen] = useState(false);
+	const handleOpen = () => setOpen(true);
+	const handleClose = () => setOpen(false);
 
 	const user = useSelector((state) => state.user.currentUser);
 	const cart = useSelector((state) => state.cart);
@@ -46,13 +41,8 @@ const Navbar = () => {
 						<>
 							<button
 								className="btn btn-sm ms-3 btn-pink-outline text-capitalize"
-								onClick={handleOpenLogin}>
+								onClick={handleOpen}>
 								login
-							</button>
-							<button
-								className="btn btn-sm ms-2 btn-pink-outline text-capitalize"
-								onClick={handleOpenRegister}>
-								register
 							</button>
 						</>
 					)}
@@ -95,11 +85,7 @@ const Navbar = () => {
 					</ul>
 				</div>
 			</div>
-			<LoginModal openLogin={openLogin} handleCloseLogin={handleCloseLogin} />
-			<RegisterModal
-				openRegister={openRegister}
-				handleCloseRegister={handleCloseRegister}
-			/>
+			<AuthModal open={open} handleClose={handleClose} />
 		</nav>
 	);
 };
