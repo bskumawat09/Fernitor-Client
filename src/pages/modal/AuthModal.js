@@ -1,3 +1,4 @@
+import { Close } from "@mui/icons-material";
 import { Button, MenuItem, Modal, TextField } from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -86,6 +87,9 @@ const AuthModal = ({ open, handleClose }) => {
 					alt=""
 					className="login-form-img"
 				/>
+				<div className="close-btn">
+					<Close onClick={handleCloseModal} />
+				</div>
 				{frame.view === "login" ? (
 					<form className="login-form" autoComplete="off">
 						<div className="form-input">

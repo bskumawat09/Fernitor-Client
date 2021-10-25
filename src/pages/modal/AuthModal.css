@@ -12,6 +12,13 @@
 	left: 0;
 	margin: auto;
 }
+.close-btn {
+	position: absolute;
+	top: 0.8rem;
+	right: 0.8rem;
+	color: #363636;
+	cursor: pointer;
+}
 .login-form-img {
 	width: 50%;
 	object-fit: cover;
@@ -43,7 +50,7 @@
 @media screen and (max-width: 480px) {
 	.modal-container {
 		width: 80%;
-		min-height: fit-content;
+		height: 70%;
 	}
 	.login-form-img {
 		display: none;

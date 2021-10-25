@@ -26,13 +26,13 @@ export const categories = [
 		id: 1,
 		name: "Chair",
 		image:
-			"https://www.ikea.com/images/sofa-and-armchairs-549294b65ee5c450507274e0cc6e8d00.jpg?f=xxs",
+			"https://www.ikea.com/images/b6/91/b691456bb9377cc331e6fabaec10d071.jpg?f=s",
 	},
 	{
 		id: 2,
 		name: "Bed",
 		image:
-			"https://www.ikea.com/in/en/images/products/hattefjaell-office-chair-gunnared-medium-grey__0852947_pe671034_s5.jpg?f=s",
+			"https://www.ikea.com/images/beds-7cf7218d3474dbb6f49b6d1ecda5519a.jpg?f=s",
 	},
 	{
 		id: 3,
@@ -44,7 +44,7 @@ export const categories = [
 		id: 4,
 		name: "Table",
 		image:
-			"https://www.ikea.com/images/d5/1c/d51c58689bf0016ad40b5410b56717f7.jpg?f=xxs",
+			"https://www.ikea.com/images/8b/6d/8b6d055db565a37e7f10a99f43ed74e4.jpg?f=s",
 	},
 	{
 		id: 5,

@@ -117,7 +117,7 @@ const Cart = () => {
 										</p>
 									</div>
 									<div className="col d-flex justify-content-end">
-										<button className="btn checkout-btn text-uppercase">
+										<button className="checkout-btn text-uppercase">
 											checkout
 										</button>
 									</div>
