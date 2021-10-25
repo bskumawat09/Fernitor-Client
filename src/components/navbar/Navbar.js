@@ -30,24 +30,26 @@ const Navbar = () => {
 					<span className="text-uppercase ms-2 fw-bold">Fernitor</span>
 				</div>
 
-				<div className="order-lg-2 nav-btns">
+				<div className="order-lg-2 d-flex align-items-center nav-btns">
 					{user ? (
-						<button
-							className="btn btn-sm ms-2 btn-pink-outline text-capitalize"
+						<div
+							className="nav-link text-uppercase text-dark"
+							style={{ cursor: "pointer" }}
 							onClick={handleLogout}>
 							logout
-						</button>
+						</div>
 					) : (
 						<>
-							<button
-								className="btn btn-sm ms-3 btn-pink-outline text-capitalize"
+							<div
+								className="nav-link text-uppercase text-dark"
+								style={{ cursor: "pointer" }}
 								onClick={handleOpen}>
 								login
-							</button>
+							</div>
 						</>
 					)}
 					<Link to="/cart">
-						<button type="button" className="btn ms-2 position-relative p-0">
+						<button type="button" className="btn position-relative p-0">
 							<Badge badgeContent={quantity} color="primary">
 								<ShoppingCartOutlined />
 							</Badge>

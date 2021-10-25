@@ -32,9 +32,13 @@ const Products = ({ cat, featured, sort, limit }) => {
 	}, [cat, featured, sort, limit]);
 
 	return (
-		<div class="row g-3 my-2">
+		<div class="row g-3">
 			{products.map((item) => (
-				<Product item={item} key={item._id} />
+				<div className="col-6 col-sm-4">
+					<div className="bg-white">
+						<Product item={item} key={item._id} />
+					</div>
+				</div>
 			))}
 		</div>
 	);

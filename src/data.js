@@ -1,7 +1,7 @@
 export const sliderItems = [
 	{
 		id: 1,
-		img: "https://creativepool.com/files/candidate/portfolio/full/1212886.jpg",
+		img: "/img/header_banner.jpg",
 		desc: "Winter lorem dolor sit amet consectetur, adipisicing elit. Dolore cum exercitationem dolores.",
 	},
 	{

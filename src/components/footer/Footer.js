@@ -14,7 +14,7 @@ import "./Footer.css";
 const Footer = () => {
 	return (
 		<footer className="bg-dark mt-4 py-5">
-			<div className="container">
+			<div className="container my-3">
 				<div className="row text-white g-4">
 					<div className="col-md-6 col-lg-3">
 						<div className="text-uppercase text-decoration-none brand text-white">

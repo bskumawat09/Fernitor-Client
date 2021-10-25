@@ -21,8 +21,8 @@ const Home = () => {
 			</div>
 			<BankOffers />
 			<Categories />
-			<Banner />
 			<Featured />
+			<Banner />
 			<Footer />
 		</div>
 	);

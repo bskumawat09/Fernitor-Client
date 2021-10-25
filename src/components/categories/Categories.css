@@ -25,10 +25,11 @@
 	padding: 0.6em 1.75em;
 	border-width: 0;
 	cursor: pointer;
+	transition: 0.2s linear;
 }
 .category-btn:hover {
-	background-color: var(--pink);
-	color: var(--white);
+	background-color: #f0f8ff;
+	color: #000000;
 	transition: 0.2s linear;
 }
 .category-img {

@@ -1,5 +1,5 @@
 .product-banner {
-	height: 85vh;
+	height: 40vh;
 	margin: 1rem auto;
 	background: url(../../assets/banner-1.jpg) center/cover no-repeat;
 }
@@ -42,7 +42,7 @@
 }
 @media screen and (max-width: 512px) {
 	.product-banner {
-		height: 50vh;
+		height: 30vh;
 		margin: 0 auto;
 	}
 }
