@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 import { logout } from "../../redux/apiCalls";
 import AuthModal from "../../pages/modal/AuthModal";
 
+let handleOpen;
+
 const Navbar = () => {
 	const [open, setOpen] = useState(false);
-	const handleOpen = () => setOpen(true);
+	handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 
 	const user = useSelector((state) => state.user.currentUser);
@@ -92,4 +94,5 @@ const Navbar = () => {
 	);
 };
 
+export { handleOpen };
 export default Navbar;

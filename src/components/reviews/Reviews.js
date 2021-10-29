@@ -1,11 +1,19 @@
 import { Rating } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { publicRequest } from "../../requestMethods";
+import { handleOpen } from "../navbar/Navbar";
 
 const Reviews = ({ pid }) => {
+	const { currentUser } = useSelector((state) => state.user);
 	const [rating, setRating] = useState(0);
 	const [description, setDescription] = useState("");
 	const [reviews, setReviews] = useState([]);
+
+	const resetFields = () => {
+		setRating(0);
+		setDescription("");
+	};
 
 	useEffect(() => {
 		const getReviews = async () => {
@@ -20,11 +28,20 @@ const Reviews = ({ pid }) => {
 		getReviews();
 	}, [pid]);
 
-	const handleClick = async () => {
-		const response = await publicRequest.post(`/reviews/products/${pid}`, {
-			review: { rating, description },
-		});
-		console.log(response.data);
+	const handleAddReview = async () => {
+		if (currentUser) {
+			try {
+				const response = await publicRequest.post(`/reviews/products/${pid}`, {
+					review: { rating, description },
+				});
+				resetFields();
+				console.log(response.data);
+			} catch (err) {
+				console.log("ReviewError", err);
+			}
+		} else {
+			handleOpen();
+		}
 	};
 
 	return (
@@ -58,7 +75,7 @@ const Reviews = ({ pid }) => {
 								</div>
 								<div className="col-md-12 my-3">
 									<button
-										onClick={handleClick}
+										onClick={handleAddReview}
 										className="btn submit-btn text-capitalize">
 										submit now
 									</button>
