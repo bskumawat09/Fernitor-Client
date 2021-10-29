@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Explore.css";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import { useParams } from "react-router";
 import { useState } from "react";
 import {
 	FormControl,
@@ -12,8 +13,10 @@ import {
 } from "@mui/material";
 
 const Explore = () => {
+	const { cat } = useParams();
+
 	const [sort, setSort] = useState("new");
-	const [category, setCategory] = useState("");
+	const [category, setCategory] = useState(cat);
 
 	const handleChange = (event) => {
 		setCategory(event.target.value);

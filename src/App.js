@@ -2,7 +2,6 @@ import "./App.css";
 import Home from "./pages/home/Home";
 import Product from "./pages/product/Product";
 import Explore from "./pages/explore/Explore";
-import Shop from "./pages/shop/Shop";
 import Cart from "./pages/cart/Cart";
 import About from "./pages/about/About";
 import Success from "./pages/Success";
@@ -13,8 +12,8 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/shop/:category">
-					<Shop />
+				<Route path="/shop/:cat">
+					<Explore />
 				</Route>
 				<Route path="/product/:pid">
 					<Product />

@@ -71,7 +71,7 @@ const Reviews = ({ pid }) => {
 							<h4>Reviews</h4>
 						</div>
 						{reviews.map((review) => (
-							<div id="#list" className="review-item bg-white p-3">
+							<div className="review-item bg-white p-3 mb-2">
 								<div className="media">
 									<div className="d-flex justify-content-start align-items-center">
 										<div>{review.author.name}</div>

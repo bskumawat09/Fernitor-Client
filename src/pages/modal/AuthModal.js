@@ -1,7 +1,7 @@
 import { Close } from "@mui/icons-material";
 import { Button, MenuItem, Modal, TextField } from "@mui/material";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { countries } from "../../data";
 import { login, register } from "../../redux/apiCalls";
 import "./AuthModal.css";
@@ -31,8 +31,6 @@ const modalInitialValues = {
 };
 
 const AuthModal = ({ open, handleClose }) => {
-	const user = useSelector((state) => state.user.currentUser);
-
 	const [loginInputs, setLoginInputs] = useState(loginInitialValues);
 	const [signupInputs, setSignupInputs] = useState(signupInitialValues);
 	const [error, showError] = useState(false);
@@ -65,14 +63,26 @@ const AuthModal = ({ open, handleClose }) => {
 	const handleLogin = (e) => {
 		e.preventDefault();
 		console.log("LoginInputs", loginInputs);
-		login(dispatch, loginInputs);
-		user ? handleCloseModal() : showError(true);
+		login(dispatch, loginInputs)
+			.then((value) => {
+				// console.log("value", value);
+				value ? handleCloseModal() : showError(true);
+			})
+			.catch(() => {
+				showError(true);
+			});
 	};
 
 	const handleRegister = (e) => {
 		e.preventDefault();
-		register(dispatch, signupInputs);
-		user ? handleCloseModal() : showError(true);
+		register(dispatch, signupInputs)
+			.then((value) => {
+				// console.log("value", value);
+				value ? handleCloseModal() : showError(true);
+			})
+			.catch(() => {
+				showError(true);
+			});
 	};
 
 	return (
