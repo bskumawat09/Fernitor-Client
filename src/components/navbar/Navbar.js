@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { Badge, IconButton } from "@mui/material";
+import { Badge, Button, IconButton } from "@mui/material";
 import { ShoppingCartOutlined } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -34,29 +34,27 @@ const Navbar = () => {
 
 				<div className="order-lg-2 d-flex align-items-center nav-btns">
 					{user ? (
-						<div
+						<Button
 							className="nav-link text-uppercase text-dark"
-							style={{ cursor: "pointer" }}
 							onClick={handleLogout}>
 							logout
-						</div>
+						</Button>
 					) : (
 						<>
-							<div
+							<Button
 								className="nav-link text-uppercase text-dark"
-								style={{ cursor: "pointer" }}
 								onClick={handleOpen}>
 								login
-							</div>
+							</Button>
 						</>
 					)}
 					<Link to="/cart">
 						<button type="button" className="btn position-relative p-0">
-							<Badge badgeContent={quantity} color="primary">
-								<IconButton>
+							<IconButton>
+								<Badge badgeContent={quantity} color="primary">
 									<ShoppingCartOutlined />
-								</IconButton>
-							</Badge>
+								</Badge>
+							</IconButton>
 						</button>
 					</Link>
 				</div>

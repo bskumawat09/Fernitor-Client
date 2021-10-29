@@ -9,6 +9,7 @@ import "./Cart.css";
 import { Add, Close, Remove } from "@mui/icons-material";
 import StripeCheckout from "react-stripe-checkout";
 import { IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 	const KEY =
@@ -65,20 +66,28 @@ const Cart = () => {
 													/>
 												</div>
 												<div className="w-50 p-2 p-md-3 my-auto">
-													<h5 className="mb-2">{product.name}</h5>
-													<h6 className="text-capitalize my-2 my-md-3">
-														color :{" "}
-														<span className="d-inline-block products-color products-color-red"></span>
+													<Link to={`/product/${product._id}`}>
+														<h5 className="mb-3 fw-bold">{product.name}</h5>
+													</Link>
+													<h6>
+														{product.inStock ? "In Stock" : "Out of Stock"}
 													</h6>
-													<h6 className="text-capitalize my-2 my-md-3">
+													<h6 className="text-capitalize my-2">
+														color : {product.color}
+													</h6>
+													<h6 className="text-capitalize my-2">
 														price : <span>Rs {product.price}</span>
 													</h6>
 													<div className="d-flex align-items-center">
-														<Remove style={{ cursor: "pointer" }} />
+														<IconButton className="me-2" size="small">
+															<Remove />
+														</IconButton>
 														<span className="text-capitalize number">
 															{product.quantity}
 														</span>
-														<Add style={{ cursor: "pointer" }} />
+														<IconButton className="ms-2" size="small">
+															<Add />
+														</IconButton>
 													</div>
 												</div>
 											</div>
