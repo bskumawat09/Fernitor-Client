@@ -20,9 +20,6 @@
 	cursor: pointer;
 	color: #808080;
 }
-.remove-button:hover {
-	color: black;
-}
 .summary-container {
 	width: 40%;
 }

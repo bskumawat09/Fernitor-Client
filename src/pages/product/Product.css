@@ -1,66 +1,62 @@
 .add-to-cart-icon-btn {
-    text-decoration: none;
-    padding: 0.44em 1em;
-    color: var(--black);
-    background: transparent;
-    border: 0.08em solid var(--black);
-    transition: 0.2s linear;
-    cursor: pointer;
+	text-decoration: none;
+	padding: 0.44em 1em;
+	color: var(--black);
+	background: transparent;
+	border: 0.08em solid var(--black);
+	transition: 0.2s linear;
+	cursor: pointer;
 }
 .add-to-cart-icon-btn:hover {
-    color: var(--white);
-    background: var(--pink);
-    border: 0.08em solid var(--pink);
-    transition: 0.2s linear;
-}
-.qty-btn:hover {
-    color: var(--pink);
-    transition: 0.2s linear;
+	color: var(--white);
+	background: var(--pink);
+	border: 0.08em solid var(--pink);
+	transition: 0.2s linear;
 }
 .single-big-img {
-    width: 100%;
+	width: 100%;
 }
 .single-product-info p {
-    font-size: 1.1rem;
-    text-align: left;
+	font-size: 1.1rem;
+	text-align: left;
 }
 .single-product-info h5 {
-    font-size: 1.1rem;
-    font-weight: 600;
+	font-size: 1.1rem;
+	font-weight: 600;
 }
 .single-product-info span {
-    font-size: 1.1rem;
-    font-weight: 400;
+	font-size: 1.1rem;
+	font-weight: 400;
 }
 .number {
-    height: 2rem;
-    width: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--black);
-    border: 1px solid var(--black);
+	height: 2rem;
+	width: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-decoration: none;
+	color: var(--black);
+	border: 1px solid var(--black);
 }
 
 @media (max-width: 512px) {
-    * {
-        font-size: 12px;
-    }
-    .single-product-info {
-        margin: 0 auto !important;
-        padding-top: 0 !important;
-    }
-    .add-to-cart-icon-btn {
-        margin-left: 1em !important;
-    }
+	* {
+		font-size: 12px;
+	}
+	.single-product-info {
+		margin: 0 auto !important;
+		padding-top: 0 !important;
+	}
+	.add-to-cart-icon-btn {
+		margin-left: 1em !important;
+	}
 }
 @media (max-width: 768px) {
-    .single-product-info {
-        margin: 0 auto !important;
-        padding-top: 0 !important;
-    }
+	.single-product-info {
+		margin: 0 auto !important;
+		padding-top: 0 !important;
+	}
 }

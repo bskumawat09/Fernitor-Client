@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { Badge } from "@mui/material";
+import { Badge, IconButton } from "@mui/material";
 import { ShoppingCartOutlined } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -53,7 +53,9 @@ const Navbar = () => {
 					<Link to="/cart">
 						<button type="button" className="btn position-relative p-0">
 							<Badge badgeContent={quantity} color="primary">
-								<ShoppingCartOutlined />
+								<IconButton>
+									<ShoppingCartOutlined />
+								</IconButton>
 							</Badge>
 						</button>
 					</Link>

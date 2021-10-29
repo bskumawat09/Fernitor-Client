@@ -14,10 +14,9 @@
 }
 .close-btn {
 	position: absolute;
-	top: 0.8rem;
-	right: 0.8rem;
+	top: 0;
+	right: 0;
 	color: #363636;
-	cursor: pointer;
 }
 .login-form-img {
 	width: 50%;

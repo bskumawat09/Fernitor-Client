@@ -1,4 +1,5 @@
 import { Add, Remove } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
@@ -49,7 +50,7 @@ const Product = () => {
 		<div>
 			<Navbar />
 
-			<section className="single-product py-5">
+			<section className="single-product pb-5">
 				<div className="container">
 					<div className="row">
 						<div className="col-10 mx-auto text-center col-lg-6 my-lg-5">
@@ -88,21 +89,17 @@ const Product = () => {
 							</h5>
 							<hr />
 							<div className="d-flex align-items-center my-2">
-								<Remove
-									className="qty-btn me-2"
-									style={{ cursor: "pointer" }}
-									onClick={() => handleQuantity("decrement")}
-								/>
+								<IconButton className="me-2">
+									<Remove onClick={() => handleQuantity("decrement")} />
+								</IconButton>
 								<span className="text-capitalize number">{quantity}</span>
-								<Add
-									className="qty-btn ms-2"
-									style={{ cursor: "pointer" }}
-									onClick={() => handleQuantity("increment")}
-								/>
+								<IconButton className="ms-2">
+									<Add onClick={() => handleQuantity("increment")} />
+								</IconButton>
 								<div
 									className="text-capitalize add-to-cart-icon-btn ms-5"
 									onClick={handleAddToCart}>
-									add to cart
+									ADD TO CART
 								</div>
 							</div>
 						</div>

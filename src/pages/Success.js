@@ -10,7 +10,7 @@ const Success = () => {
 				alignItems: "center",
 				justifyContent: "center",
 			}}>
-			Successful. Your order is being prepared...
+			<p>Successful. Your order is being prepared...</p>
 			<Link to="/">
 				<button style={{ padding: 10, marginTop: 20 }}>Go to Homepage</button>
 			</Link>

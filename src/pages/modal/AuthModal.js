@@ -1,5 +1,5 @@
 import { Close } from "@mui/icons-material";
-import { Button, MenuItem, Modal, TextField } from "@mui/material";
+import { Button, IconButton, MenuItem, Modal, TextField } from "@mui/material";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { countries } from "../../data";
@@ -98,7 +98,9 @@ const AuthModal = ({ open, handleClose }) => {
 					className="login-form-img"
 				/>
 				<div className="close-btn">
-					<Close onClick={handleCloseModal} />
+					<IconButton>
+						<Close onClick={handleCloseModal} />
+					</IconButton>
 				</div>
 				{frame.view === "login" ? (
 					<form className="login-form" autoComplete="off">
@@ -129,7 +131,8 @@ const AuthModal = ({ open, handleClose }) => {
 								/>
 							</div>
 							<Button
-								variant="outlined"
+								variant="contained"
+								disableElevation
 								color="primary"
 								sx={{ width: "100%" }}
 								onClick={handleLogin}>
@@ -215,7 +218,8 @@ const AuthModal = ({ open, handleClose }) => {
 								</TextField>
 							</div>
 							<Button
-								variant="outlined"
+								variant="contained"
+								disableElevation
 								color="primary"
 								sx={{ width: "100%" }}
 								onClick={handleRegister}>

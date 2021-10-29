@@ -1,4 +1,4 @@
-import { Rating } from "@mui/material";
+import { Button, Rating } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { publicRequest } from "../../requestMethods";
@@ -74,11 +74,12 @@ const Reviews = ({ pid }) => {
 									</div>
 								</div>
 								<div className="col-md-12 my-3">
-									<button
-										onClick={handleAddReview}
-										className="btn submit-btn text-capitalize">
-										submit now
-									</button>
+									<Button
+										variant="contained"
+										disableElevation
+										onClick={handleAddReview}>
+										SUBMIT NOW
+									</Button>
 								</div>
 							</div>
 						</div>

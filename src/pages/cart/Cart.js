@@ -8,6 +8,7 @@ import Footer from "../../components/footer/Footer";
 import "./Cart.css";
 import { Add, Close, Remove } from "@mui/icons-material";
 import StripeCheckout from "react-stripe-checkout";
+import { IconButton } from "@mui/material";
 
 const Cart = () => {
 	const KEY =
@@ -82,7 +83,11 @@ const Cart = () => {
 												</div>
 											</div>
 											<div className="remove-button">
-												<Close onClick={() => handleRemoveFromCart(product)} />
+												<IconButton>
+													<Close
+														onClick={() => handleRemoveFromCart(product)}
+													/>
+												</IconButton>
 											</div>
 										</div>
 									))}
