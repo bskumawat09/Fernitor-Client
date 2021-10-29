@@ -7,6 +7,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./Cart.css";
 import { Add, Close, Remove } from "@mui/icons-material";
+import StripeCheckout from "react-stripe-checkout";
 
 const Cart = () => {
 	const KEY =
@@ -21,7 +22,7 @@ const Cart = () => {
 	const onToken = (token) => {
 		setStripeToken(token);
 	};
-	console.log("StripeToken", stripeToken);
+	console.log("stripeToken", stripeToken);
 
 	useEffect(() => {
 		const makeRequest = async () => {
@@ -40,7 +41,6 @@ const Cart = () => {
 	}, [stripeToken, cart.total, history]);
 
 	const handleRemoveFromCart = (product) => {
-		// can remove only if the user is currently logged in
 		removeFromCart(dispatch, currentUser?._id, product);
 	};
 
@@ -117,9 +117,18 @@ const Cart = () => {
 										</p>
 									</div>
 									<div className="col d-flex justify-content-end">
-										<button className="checkout-btn text-uppercase">
-											checkout
-										</button>
+										<StripeCheckout
+											image="https://t3.ftcdn.net/jpg/03/16/31/30/360_F_316313076_JUiH8Eh992qs4SSCSrdOIQnrMxDOakSk.jpg"
+											name="Fernitor"
+											billingAddress
+											description={`You are paying Rs.${cart.total}`}
+											amount={cart.total}
+											token={onToken}
+											stripeKey={KEY}>
+											<button className="checkout-btn text-uppercase">
+												checkout
+											</button>
+										</StripeCheckout>
 									</div>
 								</div>
 							</div>
