@@ -19,7 +19,7 @@ const Reviews = ({ pid }) => {
 		const getReviews = async () => {
 			try {
 				const response = await publicRequest.get(`/reviews/products/${pid}`);
-				console.log("ReviewsRes", response.data);
+				// console.log("ReviewsRes", response.data);
 				setReviews(response.data.reviews);
 			} catch (err) {
 				console.log("ERROR", err);
@@ -50,7 +50,7 @@ const Reviews = ({ pid }) => {
 				<div className="row">
 					<div className="col-lg-6 mb-5 px-3">
 						<div className="title">
-							<h4>Add a Review</h4>
+							<h4>Add review</h4>
 						</div>
 						<div className="review-box w-80">
 							<Rating
@@ -86,7 +86,7 @@ const Reviews = ({ pid }) => {
 					</div>
 					<div className="col-lg-6 mb-5 px-3">
 						<div className="title">
-							<h4>Reviews</h4>
+							<h4>Reviews({reviews.length})</h4>
 						</div>
 						{reviews.map((review) => (
 							<div className="review-item bg-white p-3 mb-2">

@@ -65,6 +65,16 @@ const Explore = () => {
 										label="Bed"
 									/>
 									<FormControlLabel
+										value="table"
+										control={<Radio size="small" />}
+										label="Table"
+									/>
+									<FormControlLabel
+										value="lighting"
+										control={<Radio size="small" />}
+										label="Lighting"
+									/>
+									<FormControlLabel
 										value="storage"
 										control={<Radio size="small" />}
 										label="Storage"

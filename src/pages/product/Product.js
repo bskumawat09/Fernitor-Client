@@ -89,12 +89,16 @@ const Product = () => {
 							</h5>
 							<hr />
 							<div className="d-flex align-items-center my-2">
-								<IconButton className="me-2">
-									<Remove onClick={() => handleQuantity("decrement")} />
+								<IconButton
+									className="me-2"
+									onClick={() => handleQuantity("decrement")}>
+									<Remove />
 								</IconButton>
 								<span className="text-capitalize number">{quantity}</span>
-								<IconButton className="ms-2">
-									<Add onClick={() => handleQuantity("increment")} />
+								<IconButton
+									className="ms-2"
+									onClick={() => handleQuantity("increment")}>
+									<Add />
 								</IconButton>
 								<div
 									className="text-capitalize add-to-cart-icon-btn ms-5"
