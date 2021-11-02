@@ -1,3 +1,15 @@
+# Screenshots
+## Home page
+![Home](/screenshots/fernitor-home-web.jpeg)
+## Shop page
+![Shop](/screenshots/fernitor-shop-web.jpeg)
+## Product page
+![Product](/screenshots/fernitor-product-web.jpeg)
+## Signup
+![Signup](/screenshots/fernitor-signup-web.png)
+## Cart page
+![Cart](/screenshots/fernitor-fill-cart-web.jpeg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
